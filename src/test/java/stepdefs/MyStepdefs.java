@@ -1,6 +1,5 @@
 package stepdefs;
 
-import base.BaseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-public class MyStepdefs extends BaseTest {
+public class MyStepdefs {
 
 
     WebDriver driver = new ChromeDriver();
@@ -28,8 +27,8 @@ public class MyStepdefs extends BaseTest {
     @When("I click the {string} element")
     public void click_the_element(String elementName) {
 
-        if (elementName.equals("TuketiciKredisi")) {
-            locator = "(//a[contains(text(),'Tüketici Kredisi')])[2]";
+        if (elementName.equals("KonutKredisi")) {
+            locator = "(//a[contains(text(),'Konut Kredisi')])[2]";
         } else if (elementName.equals("Hesapla")) {
             locator = "//a[contains(text(),'HESAPLA')]";
         } else if (elementName.equals("MevduatGetirisiHesaplama")) {
@@ -76,5 +75,12 @@ public class MyStepdefs extends BaseTest {
         element = driver.findElement(By.xpath(locator));
         element.isDisplayed();
 
+    }
+
+    @Then("I close the browser")
+    public void i_close_the_browser() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }

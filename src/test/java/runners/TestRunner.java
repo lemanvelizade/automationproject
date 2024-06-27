@@ -1,7 +1,6 @@
 package runners;
 
 
-import base.BaseTest;
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
@@ -19,7 +18,7 @@ import org.testng.annotations.AfterClass;
 
 
 )
-public class TestRunner extends BaseTest {
+public class TestRunner {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
